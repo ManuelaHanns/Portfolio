@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-eqiv="X-UA-Compatible" content="" ie-edge />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="status"></p>
+
+        <script>
+            /*function doWork() {
+                // get the <p> element to change
+                const statusElement = document.getElementById("status");
+                // track the time and the number of passes through the loop
+                const startTime = Date.now();
+                let counter = 0;
+
+                statusElement.innerHTML = "Processing started";
+
+                while ((Date.now() - startTime < 10000)) {
+                    counter += 1;
+                    statusElement.innerHTML = `Just generated number ${counter}`;
+                }
+                statusElement.innerHTML = "Processing completed";
+            }*/
+
+            function doWorkInChunks() {
+                const statusElement = document.getElementById("status");
+
+                const startTime = Date.now();
+                let counter = 0;
+
+                statusElement.innerHTML = "Processing started";
+
+                // set intervall of 500 milliseconds, so the change is visible
+                setInterval(() => {
+                    if (Date.now() - startTime < 10000) {
+                        counter += 1;
+                        statusElement.innerHTML = `Just generated number ${counter}`;
+                    } else {
+                        statusElement.innerHTML = "Processing completed";
+                    }
+                }, 500);
+            }
+            // set a delay of 0, so the main function is called immediately
+            setTimeout(doWorkInChunks, 0);
+        </script>
+    </body>
+</html>

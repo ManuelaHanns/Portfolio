@@ -1,0 +1,155 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    margin: 0 auto;
+    padding: 0                                                   auto;
+    width: 750px;
+    background-color: #3b69ad;
+    text-align: left;
+    font-family: "trebuchet ms", verdana, arial, helvetica;   
+}
+
+header
+{
+    position: absolute;
+    top: 1em;
+    left: center;
+    padding: 2em;
+    width: 670px;
+    height: 275px;
+    box-shadow: 3px -2px 1.5px #29456f, -3px -2px 1.5px #29456f;
+    background-color: #fff;
+}
+
+nav
+{
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+a
+{
+    color: #669;
+}
+
+nav li
+{
+    border-left: 1.1px solid #aaa;
+    padding: 0 .2em 0 .4em;
+    display: inline-block;
+    text-align: center;
+}
+
+nav li:first-child
+{
+    border-left: none;
+}
+
+h1 a
+{
+    position: absolute;
+    top: 1.7em;
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: normal;
+    letter-spacing: .1px;
+}
+
+h1
+{
+    padding-bottom: 20em;
+    background-image: url(../images/i0.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 19%;
+}
+
+main
+{
+    position: absolute;
+    top: 21em;
+    left: center;
+    padding-bottom: 3em;
+    box-shadow: 3px 2px 1.5px #29456f, -3px 2px 1.5px #29456f;
+    width: 734px;
+    height: 130px;
+    background-color: #fff;
+}
+
+.dienste
+{
+   position: absolute;
+   top: 1.1em;
+   left: 2.2em;    
+}
+
+.projektlogins
+{
+    position: absolute;
+    top: 1.1em;
+    left: 17em;
+}
+
+.pki
+{
+    position: absolute;
+    top: 1.1em;
+    left: 31.5em;
+}
+
+h2
+{
+    margin: 0;
+    border-bottom: 1px solid #d7d7d7;
+    padding: .5em 1em;
+    color: #668;
+    font-size: 13px;
+    width: 13.5em;
+    background-color: #eee;
+}
+
+section ul
+{
+    padding: 1em 0 0 1em;
+}
+
+section li
+{
+    padding-left: 1em;
+    list-style: none;
+    font-size: .8em;
+    font-weight: bold;
+    line-height: 2em;
+    background-image: url(../images/li.gif); 
+    background-repeat: no-repeat;
+    background-position: 0 .8em;      
+}
+
+.sec 
+{
+    padding-left: 1.5em;
+    background-image: url(../images/icon_padlock.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+footer
+{
+    position: relative;
+    top: 30em;
+    left: .7em;
+    border-top: 5px solid #efefef;
+    height: 20px;
+    width: 710px;
+    background-color: #f9f9f9;
+}
+

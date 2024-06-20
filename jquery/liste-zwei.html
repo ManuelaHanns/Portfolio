@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zweite Liste</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+        <style>
+            p {
+                display: inline;
+                margin-left: 10px;
+            }
+        </style>
+
+        <script>
+            toastr.options = {
+                positionClass: "toast-top-center",
+                showMethode: "show"
+            };
+
+            const names = [
+                "Roland",
+                "Martin",
+                "Rosalinde",
+                "Elfriede",
+                "Jens",
+                "Olaf",
+                "Marianne",
+                "Sabrina",
+                "Nadja",
+                "Daniel"
+            ];
+
+            $(function () {
+                $("body").append("<select />");
+                const select = $("select");
+                select.append("<option />");
+                select.after("<p />");
+
+                for (let i = 0; i < names.length; i++) {
+                    select.append('<option value="' + i + '">' + names[i] + "</option>");
+                }
+                select.on("change", function () {
+                    const option = $(this).val();
+                    $("p").fadeOut(300, function () {
+                        const p = $(this);
+                        if (option != "") {
+                            const name = names[option];
+                            p.text(name);
+                            toastr.info(name + " gewählt");
+                        } else {
+                            p.text("");
+                            toastr.error("Niemand gewählt");
+                        }
+                        p.fadeIn(300);
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sharing HTTP Cookies across Domains</title>
+        <style>
+            .result {
+                border: 1px solid green;
+                padding-left: 50px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sharing HTTP Cookies Across Domains</h1>
+        <p>To run example, start the Node server (myapp) in a separate terminal tab</p>
+        <pre>
+            <code>
+                cd myapp
+                npm start
+            </code>
+        </pre>
+        <p>Please also check console</p>
+        <p id="result" class="result"></p>
+
+        <script>
+            const url = "https://api.example.com";
+            const request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    console.log(this.status);
+                    if (this.status == 200) {
+                        document.getElementById("result").innerHTML = this.responseText;
+                    }
+                }
+            };
+            request.open("GET", "http://localhost:8080/");
+            request.withCredentials = true;
+            request.send(null);
+        </script>
+    </body>
+</html>

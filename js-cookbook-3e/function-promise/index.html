@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            // create the promise
+            const promise = fetch("https://upload.wikimedia.org/wikipedia/commons/b/b2/Eagle_nebula_pillars.jpg");
+
+            // supply a function that logs successful requests
+            promise.then(function onSuccess(response) {
+                console.log(`HTTP status: ${response.status}`);
+            });
+
+            // supply a function that logs errors
+            promise.catch(function onError(error) {
+                console.error(`Error: ${error}`);
+            });
+
+            // supply a function that runs either way
+            promise.finally(function onFinally() {
+                console.log("All done");
+            });
+
+            // a more compact and typical way
+            fetch("https://upload.wikimedia.org/wikipedia/commons/b/b2/Eagle_nebula_pillars.jpg")
+                .then((response) => {
+                    console.log(`HTTP status: ${response.status}`);
+                })
+                .catch((error) => {
+                    console.error(`Error: ${error}`);
+                })
+                .finally(() => {
+                    console.log("All done");
+                });
+
+            // example of an asynchronous fetch request
+            fetch("https://upload.wikimedia.org/wikipedia/commons/b/b2/Eagle_nebula_pillars.jpg")
+                .then((response) => response.blob())
+                .then((blob) => {
+                    const img = document.getElementById("imgDownload");
+                    img.src = URL.createObjectURL(blob);
+                });
+
+            fetch("https://upload.wikimedia.org/wikipedia/commons/b/b2/Eagle_nebula_pillars.jpg")
+                .then((respone) => {
+                    if (!response.ok) {
+                        // ordinarily it's not an error if the server responds to our request
+                        // now, let's treat any response other than HTTP 200 OK as an error
+                        throw new Error(`HTTP code: ${respone.status}`);
+                    } else {
+                        return response.blob();
+                    }
+                })
+                .then((blob) => {
+                    const img = document.getElementById("imgDownload");
+                    img.src = createObjectURL(blob);
+                })
+                .catch((error) => {
+                    console.log("An error occurred in the first or second promise");
+                });
+        </script>
+    </head>
+    <body>
+        <img id="imgDownload" />
+    </body>
+</html>

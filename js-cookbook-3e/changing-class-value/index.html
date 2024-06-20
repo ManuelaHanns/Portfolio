@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Change Class</title>
+        <style>
+            .toggle-me {
+                box-sizing: border-box;
+                padding: 10px;
+                display: block;
+                text-align: center;
+                width: 100%;
+                min-height: 80px;
+                font-weight: bold;
+                background-color: greenyellow;
+            }
+
+            .new-class {
+                border: 4px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Change An Element's Class</h1>
+
+        <div id="example-element" class="toggle-me">
+            <p>Watch me change</p>
+        </div>
+
+        <button id="toggle">Toggle</button>
+        <button id="add">Add a class</button>
+        <button id="remove">Remove a class</button>
+
+        <script>
+            const element = document.getElementById("example-element");
+            const toggle = document.getElementById("toggle");
+            const add = document.getElementById("add");
+            const remove = document.getElementById("remove");
+
+            const toggleStyle = () => {
+                element.classList.toggle("toggle-me");
+            };
+
+            const addStyle = () => {
+                element.classList.add("new-class");
+            };
+
+            const removeStyle = () => {
+                if (element.classList.contains("new-class")) {
+                    element.classList.remove("new-class");
+                }
+            };
+
+            toggle.addEventListener("click", toggleStyle);
+            add.addEventListener("click", addStyle);
+            remove.addEventListener("click", removeStyle);
+        </script>
+    </body>
+</html>

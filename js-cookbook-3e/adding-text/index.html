@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Adding Text to a new Paragraph</title>
+    </head>
+    <body>
+        <h1>Adding Text to a new Paragraph</h1>
+
+        <div id="target">
+            <p>Some paragraph content</p>
+            <p>Some other paragraph</p>
+            <p>Third paragraph</p>
+            <p>And another one</p>
+        </div>
+
+        <script>
+            // use getElementById to access the div element
+            const div = document.getElementById("target");
+            // get paragraph text
+            const txt = prompt("Enter new paragraph text", "");
+            // use getElementsByTagName and the collection index to access the first paragraph
+            const oldPara = div.getElementsByTagName("P")[0];
+            // create a text node
+            const txtNode = document.createTextNode(txt);
+            // create a new paragraph
+            const para = document.createElement("P");
+            // append the child to the paragraph, and insert the new para
+            para.appendChild(txtNode);
+            div.insertBefore(para, oldPara);
+
+            
+            // create the new paragraph element
+            const newPara = document.createElement("p");
+            // create the text node
+            const text = document.createTextNode("New paragraph content");
+            // append as a child node to the new paragraph
+            newPara.appendChild(text);
+            div.appendChild(newPara);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "customerUsage": [
+    {
+      "title": "Web Scraping",
+      "description": "Many customers use our web scraping api to extract crucial data from multiple websites ike amazon, zillow, indeed, google, etc. You can scrape any website without getting blocked. You can start with basic API request."
+    },
+    {
+      "title": "Price Monitoring",
+      "description": "Our web scraping API can be used for tracking prices from ecommerce, hotel, real estate and even stock websites. You can take appropriate decisions by extracting prices and reviews from multiple websites."
+    },
+    {
+      "title": "Google Search API",
+      "description": "With Google Search API you can scrape any google page. Our API can return data in HTML and JSON form. You can scrape google search pages, review pages and other google pages as well."
+    },
+    {
+      "title": "Linkedin Scraping API",
+      "description": "With our dedicated Linkedin Scraper API you can scrape more than 1 million person and company profiles. You will get a JSON response with a lightning fast speed."
+    },
+    {
+      "title": "No-code Solutions",
+      "description": "If you are not from the technical background then you can take advantage of Affiliate Egg Pro Plugin. Without writing a single line of code you will be able to scrape any website. learn more."
+    },
+    {
+      "title": "Screenshot API",
+      "description": "Take beautiful Screenshots with our Screenshot APIs. You can opt for full or partial image while making the query."
+    }
+  ],
+  "scraperAPI": {
+    "title": "Struggling with Blocked Scraping Attempts?Get Parsed JSON data with our dedicated APIs",
+    "scraperAPIs": [
+      {
+        "title": "General Scraper API",
+        "description": "Effortlessly Extract HTML from Any Webpage with Our API. We Automate Browsers, Proxies, JavaScript Rendering, and CAPTCHA Solving for You."
+      },
+      {
+        "title": "Google Scraper API",
+        "description": "Get Google Search Results in a structured JSON format. Extract more than 100 million oranic results in a day with our Google search API."
+      },
+      {
+        "title": "Amazon Scraper API",
+        "description": "Amazon Scraper API enables automated extraction of product data from Amazon's website, including pricing, reviews, and product details for analytics and pricing intelligence."
+      },
+      {
+        "title": "Linkedin Profile Scraper API",
+        "description": "Linkedin Scraper can help you scrape person as well as company profiles at scale. Our API will provide structured JSON data which can be used for hiring, investing, etc."
+      }
+    ]
+  },
+  "satisfiedCustomers": [
+    "https://www.scrapingdog.com/assets/carbon6.png",
+    "https://www.scrapingdog.com/assets/dealcode.png",
+    "https://www.scrapingdog.com/assets/nhm-logo.png",
+    "https://www.scrapingdog.com/assets/pgsgsmall.png",
+    "https://www.scrapingdog.com/assets/zactax.png"
+  ]
+}

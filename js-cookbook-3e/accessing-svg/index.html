@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Accessing SVG from a Web Page Script</title>
+    </head>
+    <body>
+        <h1>SVG in Object</h1>
+        <h2>Please click on the square</h2>
+        <object id="object" type="image/svg+xml" data="./demo.svg"></object>
+
+        <script type="text/javascript">
+            const object = document.getElementById("object");
+
+            object.onload = function () {
+                let svgdoc;
+
+                // get access to the SVG document object
+                try {
+                    svgdoc = object.contentDocument;
+                } catch (e) {
+                    try {
+                        svgdoc = object.getSVGDocument();
+                    } catch (err) {
+                        console.log(err, "SVG in object not supported in this environment");
+                    }
+                }
+
+                if (!svgdoc) return;
+
+                // get SVG element and modify
+                const square = svgdoc.getElementById("square");
+                square.onclick = function () {
+                    let width = parseFloat(square.getAttribute("width"));
+                    width -= 50;
+                    square.setAttribute("width", width);
+                    const color = square.getAttribute("fill");
+                    if (color == "blue") {
+                        square.setAttribute("fill", "yellow");
+                        square.setAttribute("stroke", "green");
+                    } else {
+                        square.setAttribute("fill", "blue");
+                        square.setAttribute("stroke", "red");
+                    }
+                };
+            };
+        </script>
+    </body>
+</html>

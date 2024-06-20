@@ -1,0 +1,186 @@
+/* Quelle: https://gwfh.mranftl.com/fonts */
+@font-face
+{
+    font-display: swap;
+    font-family: 'Allura';
+    font-style: normal;
+    font-weight: 400;
+    src: url('allura-v19-latin-regular.woff2') format('woff2'),
+        url('allura-v19-latin-regular.woff') format('woff');
+}
+
+body
+{
+    margin: 0 auto;
+    padding: 0 1em;
+    width: 544px;
+    /* Quelle: https://pixabay.com/images/id-1759566/ */
+    background-image: url("../images/white-wood.jpg");
+    background-color: #f0f0f0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    color: #666;
+}
+
+@media screen and (min-width:1200px)
+{
+    body
+    {
+        width: 1200px;
+    }
+}
+
+h1
+{
+    font-family: 'Allura';
+    font-size: 5em;
+    color: #fff;
+    text-shadow: .025em .025em .1em #bbb;
+}
+
+h2
+{
+    margin: 0 0 .3em;
+    /*border: red 1px solid;*/
+    padding-left: 2em;
+    font-family: 'Allura';
+    font-size: 3em;
+    color: #85cb5d;
+    text-shadow: .05em .05em .15em #bbb;
+    background-image: url("../images/tomato.png");
+    background-repeat: no-repeat;
+    background-position: .5em center;
+}
+
+/*
+form,
+form *,
+ul,
+li,
+div
+{
+    border: red 1px solid;
+}
+*/
+
+form
+{
+    padding: 5em 1em 1.2em;
+    background-color: #c7f1c7;
+    background-image: url("../images/italia-waves-2.svg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: 0 -3em;
+}
+
+form label
+{
+    display: block;
+    margin-top: 1em;
+    border: 0;
+    padding: 0;
+    float: left;
+    clear: both;
+}
+
+form input,
+form select
+{
+    margin-top: .65em;
+    padding: .5em .2em;
+    float: right;
+}
+
+form input,
+form select,
+form textarea
+{
+    display: block;
+    border: 1px solid #ccc;
+    border-style: solid;
+    color: #666;
+}
+
+form input
+{
+    width: 24em;
+}
+
+form select
+{
+    width: 24.5em;
+}
+
+form textarea
+{
+    margin: 0;
+    padding: 1%;
+    width: 98%;
+    resize: vertical;
+}
+
+form input[type=submit]
+{
+    width: 10em;
+}
+
+ul
+{
+    padding: 0;
+}
+
+form,
+ul
+{
+    display: inline-block;
+    margin: 0 1em 1em 0;
+    vertical-align: top;
+}
+
+li
+{
+    margin: 0 0 1em;
+    padding: 1em;
+    list-style-type: none;
+    background-color: #fff;
+}
+
+form,
+li
+{
+    border-radius: .5em;
+    width: 32em;
+    box-shadow: 0 0 .5em #bbb;
+}
+
+.date
+{
+    margin-right: 1em;
+    float: left;
+}
+
+.rating
+{
+    margin-left: 1em;
+    float: right;
+}
+
+.name
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.review
+{
+    margin: 1em -1em 0;
+    border-top: 1px solid #ccc;
+    padding: 1.5em 1.5em .6em;
+    clear: both;
+    line-height: 1.5em;
+    background-image: url("../images/quotes.svg");
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: 1em 1em;
+}

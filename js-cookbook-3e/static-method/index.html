@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            class Book {
+                constructor(title, firstName, lastName) {
+                    this.title = title;
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+                static createSequel(prevBook, title) {
+                    return new Book(title, prevBook.firstName, prevBook.lastName);
+                }
+            }
+            // create a book with the usual constructor
+            const book = new Book("Good Design", "Polly", "Morfissim");
+            console.log(book);
+            // create a sequel with the static method
+            const sequel = Book.createSequel(book, "Even Gooder Design");
+            console.log(sequel);
+
+            class Author {
+                constructor(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+            }
+            class Book2 {
+                constructor(title, author) {
+                    this.title = title;
+                    this.author = author;
+                }
+                static createSequel2(prevBook, title) {
+                    return new Book2(title, prevBook.author);
+                }
+                static createTrilogy(author, title1, title2, title3) {
+                    return [new Book2(title1, author), new Book2(title2, author), new Book2(title3, author)];
+                }
+            }
+            // create a trilogy of three books with a factory method
+            const author = new Author("Koh", "Der");
+            const books = Book2.createTrilogy(author, "A Sea of Fire", "A Sea of Ice", "A Sea of Water");
+            console.log(books);
+        </script>
+    </head>
+    <body></body>
+</html>

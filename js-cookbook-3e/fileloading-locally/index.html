@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Reader</title>
+    <style>
+        .result {
+            margin: 30px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Reader</h1>
+    <form>
+        <label for="file">File</label><br/>
+        <input type="file" id="file" accept=".jpg, .jpeg, .png"/>
+    </form>
+    <div id="result" class="result">
+        <ul>
+            <li>Image name: <span id="name"></span></li>
+            <li>Image type: <span id="type"></span></li>
+        </ul>
+    </div>
+
+    <script>
+        const inputElement = document.getElementById("file");
+        const result = document.getElementById("result");
+        const nameEl = document.getElementById("name");
+        const typeEl = document.getElementById("type");
+
+        function handleFile(){
+            // read the contents of the file
+            const file = this.files[0];
+            const reader = new FileReader();
+            // add 'load' event listener
+            reader.addEventListener("load", event => {
+                // create the image element and display it within the result div
+                const img = document.createElement("img");
+                img.setAttribute("src", event.target.result);
+                img.setAttribute("width", "250");
+                result.appendChild(img);
+                // display the image name and and file type
+                const name = document.createTextNode(file.name);
+                const type = document.createTextNode(file.type);
+            
+                nameEl.appendChild(name);
+                typeEl.appendChild(type);
+            });
+            reader.readAsDataURL(file);
+        }
+
+        inputElement.addEventListener("change", handleFile, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Adding Click Functionality</title>
+    </head>
+    <body>
+        <h3>Please click the button</h3>
+        <button type="button" id="click-button">Click me!</button>
+        <h3>Click on the "Click me!" Text or use the Keyboard</h3>
+        <div tabindex="0" role="button" id="click-div">Click me!</div>
+
+        <script>
+            // define an event handler function
+            const clickHandler = (event) => { 
+                window.alert("The button has been clicked!");
+            };
+            // select element
+            const btn = document.getElementById("click-button");
+            // add he event listener to the element and call "clickHandler" function
+            btn.addEventListener("click", clickHandler);
+
+            const clickHandler2 = (event) => {
+                window.alert(`The ${event.currentTarget.nodeName} element has been clicked!`);
+            };
+            const clickableDiv = document.getElementById("click-div");
+            clickableDiv.addEventListener("click", clickHandler2);
+
+            // when using a div add a keydown event listener for keyboard users
+            clickableDiv.addEventListener("keydown", (event) => {
+                if (event.code === "Space" || event.code === "Enter") {
+                    clickableDiv.click()
+                }
+            });
+        </script>
+    </body>
+</html>

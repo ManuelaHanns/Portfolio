@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Accessing All Elements of a Specific Type</title>
+    </head>
+    <body>
+        <h1>Accessing All Elements of a Specific Type</h1>
+
+        <p><img src="img/really-cute-cat.jpg" alt="Creamy" style="width: 200px;height: 200px;"/></p>
+        <p><img src="img/cuddletime.jpg" alt="Creamy and Fluffy cuddling" style="width: 200px;height: 200px;" /></p>
+        <p><img src="img/more-cuddletime.jpg" alt="Creamy and Fluffy" style="width: 200px;height: 200px;"/></p>
+
+        <script>
+            const imgElements = document.getElementsByTagName("img");
+            for (let i = 0; i < imgElements.length; i++) {
+                const img = imgElements[i];
+                console.log(img);
+            }
+            const imgs = document.getElementsByTagName("img");
+            console.log(imgs.length);
+            const p = document.createElement("p");
+            const img = document.createElement("img");
+            img.src = "./img/lernbegleitung.jpg";
+            img.alt = "Cookie on desk";
+            img.style = "width:200px;height:200px";
+            p.appendChild(img);
+
+            const paras = document.getElementsByTagName("p");
+            paras[0].parentNode.appendChild(p);
+            console.log(imgs.length);
+
+            const imgElements2 = document.getElementsByTagName("img");
+            for (let i=0; i< imgElements2.length; i++) {
+                const img = imgElements2[i];
+                console.log(img);
+            }
+            /*
+            const allElems = document.getElementsByTagName("*");
+            for (let i=0; i<allElems.length;i++) {
+                const element = allElems[i];
+                console.log(element);
+            }
+            */
+        </script>
+    </body>
+</html>

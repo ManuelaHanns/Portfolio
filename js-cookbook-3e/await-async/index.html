@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            async function getImage() {
+                const url = "https://upload.wikimedia.org/wikipedia/commons/b/b2/Eagle_nebula_pillars.jpg";
+                const response = await fetch(url);
+                console.log(`HTTP status: ${response.status}`);
+            }
+            getImage().then(() => {
+                console.log("All asynchronous steps completed");
+            });
+
+            async function getImage() {
+                const url = "https://upload.wikimedia.org/wikipedia/commons/b/b2/Eagle_nebula_pillars.jpg";
+                try {
+                    const response = await fetch(url);
+                    console.log(`HTTP status: ${response.status}`);
+                } catch (err) {
+                    console.error(`Error: ${error}`);
+                } finally {
+                    console.log("All done");
+                }
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

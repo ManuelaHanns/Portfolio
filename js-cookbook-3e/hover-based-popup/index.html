@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Creating Hover-Based Pop-Up Info Windows</title>
+        <style>
+            img {
+                width: 200px;
+                height: 200px;
+                display: inline-block;
+            }
+            .popup {
+                border: 2px solid black;
+                padding-inline-start: 0.5em;
+                width: 200px;
+                text-align: center;
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Creating Hover-Based Pop-Up Info Windows</h1>
+
+        <img src="img/cuddletime.jpg" alt="cuddletime" id="0" />
+        <img src="img/more-cuddletime.jpg" alt="more-cuddletime" id="1" />
+        <img src="img/really-cute-cat.jpg" alt="Creamy" id="2" />
+        <img src="img/lernbegleitung.jpg" alt="Cookie" id="3" />
+
+        <script>
+            const data = ["Creamy and Fluffy", "Creamy and Fluffy", "Creamy", "Cookie"];
+            window.onload = () => {
+                const imgs = document.querySelectorAll("img");
+                imgs.forEach((img) => {
+                    img.addEventListener(
+                        "mouseover",
+                        () => {
+                            getInfo(img.id);
+                        },
+                        false
+                    );
+                    img.addEventListener(
+                        "mouseout",
+                        () => {
+                            removeWindow();
+                        },
+                        false
+                    );
+                });
+            };
+            function getInfo(id) {
+                showWindow(id, data[id]);
+            }
+            function comPos(obj) {
+                const rect = obj.getBoundingClientRect();
+                let height;
+                if (rect.height) {
+                    height = rect.height;
+                } else {
+                    height = rect.bottom - rect.top;
+                }
+                const top = rect.top + height + 10;
+                return [rect.left, top];
+            }
+            function showWindow(id, response) {
+                const img = document.getElementById(id);
+                console.log(img);
+                const loc = comPos(img);
+                const left = `${loc[0]}px`;
+                const top = `${loc[1]}px`;
+
+                const div = document.createElement("popup");
+                div.id = "popup";
+                const txt = document.createTextNode(response);
+                div.appendChild(txt);
+                div.setAttribute("class", "popup");
+                div.setAttribute("style", `position: fixed; left: ${left}; top: ${top}`);
+                document.body.appendChild(div);
+            }
+            function removeWindow() {
+                const popup = document.getElementById("popup");
+                if (popup) popup.parentNode.removeChild(popup);
+            }
+        </script>
+    </body>
+</html>

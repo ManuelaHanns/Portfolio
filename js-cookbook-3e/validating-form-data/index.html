@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Validating Form Data</title>
+        <script src="https://unpkg.com/validator@12.2.0/validator.min.js"></script>
+        <style>
+            [aria-invalid] {
+                background-color: #f5b2b2;
+            }
+
+            input {
+                margin: 10px 0;
+                padding: 5px;
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Validating Form Data</h1>
+        <form id="example" name="example" action="" method="post">
+            <fieldset>
+                <legend>Example Form</legend>
+                <div>
+                    <label for="email">Email (required):</label>
+                    <input type="email" id="email" name="email" value="" required />
+                </div>
+                <div>
+                    <label for="postal">Postal Code:</label>
+                    <input type="text" id="postal" name="url" value="" />
+                </div>
+                <div>
+                    <input type="submit" value="Submit" />
+                </div>
+            </fieldset>
+        </form>
+        <script>
+            function inputValidator(id, value) {
+                // check email validity
+                if (id === "email") {
+                    return validator.isEmail(value);
+                }
+                // check US postal code validity
+                if (id === "postal") {
+                    return validator.isPostalCode(value, "US");
+                }
+                return false;
+            }
+            const inputs = document.querySelectorAll("input");
+
+            inputs.forEach((input) => {
+                // fire an event each time an input value changes
+                input.addEventListener("input", () => {
+                    // pass the input value to the validation function
+                    const valid = inputValidator(input.id, input.value);
+                    // if not valid set the aria-invalid attribute to true
+                    if (!valid && input.value.length > 0) {
+                        input.setAttribute("aria-invalid", "true");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

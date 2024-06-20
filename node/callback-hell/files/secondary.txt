@@ -1,0 +1,1 @@
+This is a file where data will be appended. Hello! This is an example text file to be used with async/await and promisifyHello! This is an example text file to be used with async/await and promisify
